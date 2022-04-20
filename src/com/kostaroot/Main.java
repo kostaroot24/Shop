@@ -1,8 +1,10 @@
 package com.kostaroot;
 
 import com.kostaroot.customerinfo.AgeRestriction;
+import com.kostaroot.manager.ShopExeptions;
 import com.kostaroot.product.Product;
 import com.kostaroot.product.FoodProduct;
+import com.kostaroot.manager.PurchaseManager;
 
 import java.util.Date;
 
@@ -17,5 +19,11 @@ public class Main {
         long delta = foodProduct.getExpirationDate().getTime() - new Date().getTime();
 
         System.out.println("Delta: "+delta / (3600*1000*24));
+
+        try{
+            PurchaseManager.processPurchase();
+        }catch ( ShopExeptions e ){
+            System.out.println(e.getMessage());
+        }
     }
 }
