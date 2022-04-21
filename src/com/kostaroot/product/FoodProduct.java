@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class FoodProduct extends Product implements Expirable{
     private Date expiredDate;
-    private final long DAILYMILSEC = 84600 * 1000;
+
 
     public FoodProduct(String name, int quatity, double price, AgeRestriction ageRestriction,
                        Date expiredDate){

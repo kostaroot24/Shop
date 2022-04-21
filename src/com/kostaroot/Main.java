@@ -2,6 +2,7 @@ package com.kostaroot;
 
 import com.kostaroot.customerinfo.AgeRestriction;
 import com.kostaroot.manager.ShopExeptions;
+import com.kostaroot.product.Computer;
 import com.kostaroot.product.Product;
 import com.kostaroot.product.FoodProduct;
 import com.kostaroot.manager.PurchaseManager;
@@ -29,5 +30,8 @@ public class Main {
         Product banana = new FoodProduct("Banana",10,100, AgeRestriction.None,
                 new Date((long)(System.currentTimeMillis() + 10 * PurchaseManager.DAILYMSEC)));
         System.out.println("New price:" + banana.getPrice());
+        Product asus = new Computer("Notebook",1,1000, AgeRestriction.Teenager);
+        System.out.println("Asus: "+asus.getPrice());
     }
+
 }

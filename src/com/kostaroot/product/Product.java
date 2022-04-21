@@ -7,6 +7,7 @@ public class Product implements Buyable {
     private int quantity;
     private double price;
     private AgeRestriction ageRestriction;
+    protected static final long DAILYMILSEC = 84600 * 1000;
 
     public Product( String name, int quantity, double price, AgeRestriction ageRestriction){
         this.name = name;
