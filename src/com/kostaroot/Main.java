@@ -25,5 +25,9 @@ public class Main {
         }catch ( ShopExeptions e ){
             System.out.println(e.getMessage());
         }
+
+        Product banana = new FoodProduct("Banana",10,100, AgeRestriction.None,
+                new Date((long)(System.currentTimeMillis() + 10 * PurchaseManager.DAILYMSEC)));
+        System.out.println("New price:" + banana.getPrice());
     }
 }
