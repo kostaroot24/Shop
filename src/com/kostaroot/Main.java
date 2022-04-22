@@ -32,6 +32,8 @@ public class Main {
         System.out.println("New price:" + banana.getPrice());
         Product asus = new Computer("Notebook",1,1000, AgeRestriction.Teenager);
         System.out.println("Asus: "+asus.getPrice());
+
+
     }
 
 }
