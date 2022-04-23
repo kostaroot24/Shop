@@ -37,6 +37,10 @@ public class Product implements Buyable {
         return price;
     }
 
+    public String getName(){
+        return name;
+    }
+
     @Override
     public String toString() {
         return "Product: " + name + "\n" +

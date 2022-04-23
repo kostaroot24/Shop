@@ -10,4 +10,11 @@ public class Computer extends ElectonicsProduct {
         super(name,quantity,price,ageRestriction,
                 new Date(System.currentTimeMillis()+ 365 * Product.DAILYMILSEC));
     }
+
+    @Override
+    public double getPrice() {
+        if ( this.getQuantity() < 1000 )
+            return super.getPrice();
+        return super.getPrice() * 0.95;
+    }
 }

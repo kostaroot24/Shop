@@ -10,4 +10,10 @@ public class Appliance extends ElectonicsProduct{
                 new Date(System.currentTimeMillis()+ 182 * Product.DAILYMILSEC));
     }
 
+    @Override
+    public double getPrice() {
+        if(this.getQuantity()> 50)
+            return super.getPrice();
+        return super.getPrice() * 1.05;
+    }
 }
