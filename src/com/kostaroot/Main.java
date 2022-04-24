@@ -26,15 +26,19 @@ public class Main {
         Product banana = new FoodProduct("Banana",10,100, AgeRestriction.None,
                 new Date((long)(System.currentTimeMillis() + 10 * PurchaseManager.DAILYMSEC)));
         System.out.println("New price:" + banana.getPrice());
-        Product asus = new Computer("Notebook",0,1000, AgeRestriction.Teenager);
+        Product asus = new Computer("Notebook",1,1000, AgeRestriction.Teenager);
         System.out.println("Asus price: "+asus.getPrice());
         Product  windows = new Appliance("Windows",51,100, AgeRestriction.None);
         System.out.println("Wind price: "+windows.getPrice());
+        
         Customer child = new Customer("Vasia",10,100);
         Customer teenager = new Customer("Anton",17,1500);
         Customer adult = new Customer("Dimas",25,2400);
 
         try{
+            PurchaseManager.processPurchase(asus,adult);
+            System.out.println(adult.toString());
+            System.out.println(asus.toString());
             PurchaseManager.processPurchase(asus,adult);
         }catch ( ShopExeptions e ){
             System.out.println(e.getMessage());

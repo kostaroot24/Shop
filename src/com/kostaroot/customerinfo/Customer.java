@@ -29,7 +29,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Name: " + customerName + '\'' +
+        return "Name: " + customerName +
                 "\nage: " + age +
                 "\nbalance: " + balance + " USD";
     }

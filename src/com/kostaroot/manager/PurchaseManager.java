@@ -9,9 +9,14 @@ public class PurchaseManager {
 
     public static void processPurchase(Product product, Customer customer) throws ShopExeptions{
         if (ageCheck(product,customer)){
-            if(haveProduct(product))
-                System.out.println("Success");
-            else
+            if(haveProduct(product)) {
+                if(moneyCheck(product,customer)) {
+                    System.out.println("Success buy "+product.getName());
+                    product.setQuantity( product.getQuantity()-1);
+                    customer.setBalance( customer.getBalance() - product.getPrice() );
+                }else
+                    throw new ShopExeptions("Money enough for "+product.getName());
+            }else
                 throw new ShopExeptions(product.getName()+" is end");
         }else
             throw new ShopExeptions("You are to young for buy this product");
